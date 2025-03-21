@@ -8,13 +8,11 @@ if [ -n "$che" ];then
 	cat $cfi
 	wcf=$( cat $cfi | wc )
 	echo "Total lines, words and chars: $wcf "
-	echo "File Size: $filesize"
-	filesize= du -sh | awk '{print $1}'
+	echo "File Size: $(du -sh | awk '{print $1}')"
 
 #search function:
-
 	read -p "Enter a word to search in the file " sea
-	if [[ -n $(cat $cfi | grep $sea) ]];then
+	if [[ -n $(cat $cfi | grep -w $sea) ]];then
 		pos=$(tr -s ' ' '\n' < $cfi | grep -n $sea | cut -d ':' -f1)
 		echo "True, Word:$equ is number $pos in the file"
 	else
@@ -23,3 +21,4 @@ if [ -n "$che" ];then
 else
 	echo "No such file in this directory "
 fi
+
