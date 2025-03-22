@@ -1,13 +1,13 @@
 #!/bin/bash
 # call for utility
 echo "how can i help you today?"
-PS3="choos utility, read or delet"
-option=("utility" "read" "delet")
+PS3="choose utility, read or delete "
+option=("utility" "read" "delete")
 select opt in "${option[@]}"; do
 	case $REPLY in
 		utility)
 			echo "you chose utility"
-			./zivs_script_utility.sh
+			./utility.sh
 			break
 			;;
 		read)
@@ -15,9 +15,9 @@ select opt in "${option[@]}"; do
 			./readfile.sh
 			break
 			;;
-		delet)
-			echo "you chose delet"
-			./delet.sh
+		delete)
+			echo "you chose delete"
+			./delete.sh
 			break
 			;;
 		*)
