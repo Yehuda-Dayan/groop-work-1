@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 #for every delete operation - ask if sure
 
 read -p "What do you want to delete? write path" target
